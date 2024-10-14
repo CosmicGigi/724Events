@@ -24,21 +24,20 @@ describe("When Form is created", () => {
       await screen.findByText("Message envoyé !");
     });
   });
-
 });
-
 
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
-  })
-  it("a list a people is displayed", () => {
-    // to implement
-  })
+    render(<Home />);
+    const elements = screen.getAllByText("Notre équipe");
+    expect(elements).toHaveLength(2);
+  });
+  it("a list of people is displayed", () => {
+    render(<Home />);
+    expect(screen.getByText("Samira")).toBeInTheDocument();
+  });
   it("a footer is displayed", () => {
-    // to implement
-  })
-  it("an event card, with the last event, is displayed", () => {
-    // to implement
-  })
+    render(<Home />);
+    expect(screen.getByText("contact@724events.com")).toBeInTheDocument();
+  });
 });

@@ -11,16 +11,14 @@ const Slider = () => {
     (evtA, evtB) => new Date(evtB.date) - new Date(evtA.date)
   );
 
-  const nextCard = () => {
-    setTimeout(
+  useEffect(() => {
+    const timeout = setTimeout(
       () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
       5000
     );
-  };
 
-  useEffect(() => {
-    nextCard();
-  });
+    return () => clearTimeout(timeout);
+  }, [index, byDateDesc.length]);
 
   return (
     <div className="SlideCardList">

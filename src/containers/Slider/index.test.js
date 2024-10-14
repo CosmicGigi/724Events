@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import Slider from "./index";
 import { api, DataProvider } from "../../contexts/DataContext";
 
+// màj ?
 const data = {
   focus: [
     {

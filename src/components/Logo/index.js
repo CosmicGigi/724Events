@@ -38,6 +38,7 @@ const Logo = ({ size }) => (
       <text
         fill="url(#paint5_linear_56_57)"
         style={{
+          // màj
           fontFamily: "Kalimati",
           fontSize: "39px",
           fontWeight: 700,
