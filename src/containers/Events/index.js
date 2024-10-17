@@ -65,7 +65,11 @@ const EventList = () => {
           </div>
           <div className="Pagination">
             {[...Array(pageNumber || 0)].map((_, n) => (
-              <a key={n} href="#events" onClick={() => setCurrentPage(n + 1)}>
+              <a
+                key={`page-${n + 1}`}
+                href="#events"
+                onClick={() => setCurrentPage(n + 1)}
+              >
                 {n + 1}
               </a>
             ))}
